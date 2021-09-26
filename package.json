@@ -1,0 +1,34 @@
+{
+  "name": "name",
+  "version": "0.0.0",
+  "description": "description",
+  "main": "build/cjs/index.js",
+  "module": "build/lib/index.js",
+  "files": [
+    "/build"
+  ],
+  "repository": "https://github.com/mmiller42/name.git",
+  "homepage": "https://github.com/mmiller42/name",
+  "author": "mmiller42 <me@mmiller.me>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf build && tsc --project tsconfig.json && babel \"build/esm/index.js\" --out-dir build/cjs && yarn format",
+    "format": "prettier --write \"*.{js,json,md}\" \"src/**/*.ts\"",
+    "coverage-report": "open coverage/lcov-report/index.html",
+    "test": "yarn test:format && yarn test:unit",
+    "test:format": "prettier --check \"*.{js,json,md}\" \"src/**/*.ts\"",
+    "test:unit": "ava",
+    "preversion": "yarn build && yarn test"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
+    "ava": "^3.15.0",
+    "esm": "^3.2.25",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "sinon": "^11.1.2",
+    "typescript": "^4.4.3"
+  }
+}
