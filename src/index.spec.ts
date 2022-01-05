@@ -1,6 +1,6 @@
 import test from "ava";
 
-import { add } from "./index";
+import { add } from "./index.js";
 
 test("returns the sum of the numbers passed in", (t) => {
   t.is(add([1, 2, 3, 4, 5]), 15);

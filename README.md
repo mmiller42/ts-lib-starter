@@ -1,4 +1,4 @@
-# name
+# **name**
 
 > description
 
@@ -8,10 +8,10 @@ description
 
 ```sh
 # npm
-npm install name
+npm install __name__
 
 # yarn
-yarn add name
+yarn add __name__
 ```
 
 ## Example
